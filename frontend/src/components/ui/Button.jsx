@@ -15,6 +15,7 @@ export const Button = ({
     popOut:
       "text-text py-1 px-3 hover:bg-[#d4d4d8] hover:text-black rounded-md transform hover:scale-105 transition duration-200",
     transparent: "text-white hover:bg-opacity-10",
+    none: ""
   };
 
   return (

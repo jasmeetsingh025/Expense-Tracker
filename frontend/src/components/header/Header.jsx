@@ -1,12 +1,13 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { Button, Container, Logo } from "../index.js";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/react";
 // import { ChevronDownIcon } from "@heroicons/react/20/solid";
 
 function Header({ isLoggedIn = false }) {
   // const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
+  const location = useLocation();
 
   const navItems = [
     {
@@ -29,7 +30,7 @@ function Header({ isLoggedIn = false }) {
 
   return (
     <>
-      <header className="bg-opacity-50 shadow">
+      <header className="w-full bg-primary shadow">
         <Container>
           <div className="flex items-center justify-between sm:py-4">
             <div className="flex items-center ">
@@ -65,7 +66,7 @@ function Header({ isLoggedIn = false }) {
                   className="relative hidden md:inline-block text-left"
                 >
                   <div>
-                    <MenuButton className="flex items-center rounded-full ring-1 ring-gray-300 shadow-xs hover:ring-gray-400">
+                    <MenuButton className="flex items-center rounded-full shadow-xs ring-2 hover:ring-4">
                       {/* <ChevronDownIcon
                         aria-hidden="true"
                         className="-mr-1 size-5 text-gray-400"
@@ -165,28 +166,15 @@ function Header({ isLoggedIn = false }) {
                       </div>
                     </MenuItems>
                   </Menu>
-                  {/* <svg
-                    className="w-6 h-6"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M4 6h16M4 12h16m-7 6h7"
-                    ></path>
-                  </svg> */}
                 </Button>
               </div>
             )}
             {!isLoggedIn && (
               <div className="hidden md:block">
-                <button className="text-text hover:py-1 px-3 hover:bg-[#d4d4d8] hover:text-black rounded-md transform hover:scale-105 transition duration-200">
-                  Login
-                </button>
+                <Button type="button" variant="none">
+                  <Link to="/login" className="text-slate-200 rounded-lg py-2 px-3 hover:text-black hover:bg-slate-300
+                  transition delay-150 duration-300 ease-in">Login</Link>
+                </Button>
               </div>
             )}
           </div>

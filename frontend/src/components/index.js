@@ -5,5 +5,6 @@ import { LoginForm } from "./LoginForm";
 import { Button } from "./ui/Button";
 import { Input } from "./ui/Input";
 import { SignUpForm } from "./SignUpForm";
+import Hero from "./Hero";
 
-export { Container, Header, Logo, LoginForm, Button, Input, SignUpForm };
+export { Container, Header, Logo, LoginForm, Button, Input, SignUpForm, Hero };
