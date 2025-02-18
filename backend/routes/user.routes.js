@@ -29,9 +29,8 @@ router.route("/login").post(userLoginValidator(), validate, loginUser);
 router.route("/logout").post(verifyJWT, logoutUser);
 router.route("/register").post(createUserValidator(), validate, registerUser);
 router.route("/").get(getAllUsers);
-router.route("/:id").get(getUserById);
-router.route("/:id").put(updateUser);
-router.route("/:id").delete(deleteUser);
+router.route("/:id").get(getUserById).put(updateUser).delete(deleteUser);
+
 router.route("/:userId/soft-delete").put(softDeleteUser);
 router
   .route("/forgot-password")
