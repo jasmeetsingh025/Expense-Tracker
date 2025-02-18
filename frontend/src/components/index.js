@@ -1,10 +1,19 @@
-import Container from "./container/Container";
-import Header from "./header/Header";
 import Logo from "./Logo";
 import { LoginForm } from "./LoginForm";
 import { Button } from "./ui/Button";
 import { Input } from "./ui/Input";
 import { SignUpForm } from "./SignUpForm";
-import Hero from "./Hero";
+import Navbar from "./Navbar";
+import LeftSideBar from "./Leftsidebar";
+import MainSection from "./MainSection";
 
-export { Container, Header, Logo, LoginForm, Button, Input, SignUpForm, Hero };
+export {
+  Navbar,
+  LeftSideBar,
+  MainSection,
+  Logo,
+  LoginForm,
+  Button,
+  Input,
+  SignUpForm,
+};

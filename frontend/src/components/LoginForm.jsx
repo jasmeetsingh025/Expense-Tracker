@@ -21,9 +21,8 @@ export function LoginForm({ className, ...props }) {
     const userData = { email, password };
     try {
       const response = await fetchUserlogin(userData);
-      console.log(response);
       if (response) {
-        dispatch(login(response.user));
+        dispatch(login(response.data.user));
         navigate("/");
       }
     } catch (error) {
@@ -110,7 +109,7 @@ export function LoginForm({ className, ...props }) {
             <div className="w-full border-t border-border"></div>
           </div>
         </div>
-        <Button type="submit" variant="outline" className="w-full">
+        <Button variant="outline" className="w-full">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
